@@ -40,15 +40,15 @@ public class Endereco {
     }
 
     public void exibe() {
-        System.out.print("Endereço: " + tipoLograd + ", "); 
-        System.out.print(nomeLograd + ", "); 
-        System.out.print(numLograd); 
-        if (apto != 0) { 
-            System.out.print(" / " + apto); 
+    	String enderecoTodo = nomeLograd + ", " + numLograd;
+    	if (apto != 0) { 
+            enderecoTodo+= " / " + apto; 
         } 
         if (compl != null) { 
-            System.out.print(" - " + compl); 
+            enderecoTodo+=" - " + compl; 
         } 
-        System.out.println("\n"); 
+        System.out.printf("| | %-75s | |", "Endereço: " + enderecoTodo); 
+        
+        System.out.printf("\n| | %-75s | |\n", "Tipo do Endereço: " + tipoLograd); 
     }
 }
