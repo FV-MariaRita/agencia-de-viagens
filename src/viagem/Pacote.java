@@ -10,18 +10,26 @@ public class Pacote {
     private String transporte;
     private double precoPorPessoa;
 
+    public Pacote (){
+        
+    }
+
     public Pacote(String destino, String hospedagem, String transporte, double precoPorPessoa) {
         this.destino = destino;
         this.hospedagem = hospedagem;
         this.transporte = transporte;
         this.precoPorPessoa = precoPorPessoa;
     }
-
+    
     public void exibe() {
-        System.out.println("Destino: " + destino);
-        System.out.println("Hospedagem: " + hospedagem);
-        System.out.println("Transporte: " + transporte);
-        System.out.println("Preço por pessoa (desconto de 50% para crianças de até 12 anos): R$" + precoPorPessoa);
+    	System.out.printf("| %-80s|\n", "Destino: " + destino);
+        System.out.printf("| %-80s|\n", "Hospedagem: " + hospedagem);
+        System.out.printf("| %-80s|\n", "Transporte: " + transporte);
+        System.out.printf("| %-80s|\n", String.format("Preço por pessoa (desconto de 50%% para crianças de até 12 anos): R$ %.2f", precoPorPessoa));
+        //System.out.println("Destino: " + destino);
+        //System.out.println("Hospedagem: " + hospedagem);
+        //System.out.println("Transporte: " + transporte);
+        //System.out.println("Preço por pessoa (desconto de 50% para crianças de até 12 anos): R$" + precoPorPessoa);
     }
 
     public String getDestino() {
