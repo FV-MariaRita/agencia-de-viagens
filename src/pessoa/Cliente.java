@@ -17,10 +17,12 @@ public class Cliente extends Pessoa {
     }
 
     public void exibe() {
+    	System.out.print("| " + "- ".repeat(3) + "DADOS DO CLIENTE " + "- ".repeat(28).trim() + "  |\n");
         super.exibe();
         endereco.exibe();
-        System.out.println("Email: " + email);
-        System.out.println("Telefone: " + telefone);
+        System.out.printf("| | %-75s | |\n", "Email: " + email);
+        System.out.printf("| | %-75s | |\n", "Telefone: " + telefone);
+        System.out.print("| " + "- ".repeat(40).trim() + " |\n");
     }
 
     public Endereco getEndereco() {
@@ -49,3 +51,4 @@ public class Cliente extends Pessoa {
 
     
 }
+
