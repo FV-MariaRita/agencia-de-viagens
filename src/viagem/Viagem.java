@@ -22,8 +22,8 @@ public class Viagem {
         this.acompanhantes = new Pessoa[10]; 
     }
     
-    public void incluirAcompanhates(Pessoa acomp) {
-
+    public void incluirAcompanhantes(Pessoa acomp, int num) {
+    	acompanhantes[num] = acomp;
     }
 
     public double calculaPrecoViagem () {
@@ -40,12 +40,17 @@ public class Viagem {
     }
 
     public void exibe() {
-        System.out.println("-----DADOS DA VIAGEM-----");
         pacote.exibe();
-        System.out.println("Valor total: R$" + calculaPrecoViagem());
+        System.out.printf("| %-80s|\n", "Valor total: R$" + calculaPrecoViagem());
         cliente.exibe();
-        for (int i = 0; i < (qtdPessoas - 1); i++) {
-            acompanhantes[i].exibe();
+        if (qtdPessoas>1) {
+        	System.out.print("| " + "- ".repeat(3) + "DADOS DOS ACOMPANHANTES " + "- ".repeat(25).trim() + " |\n");
+	        for (int i = 0; i < (qtdPessoas - 1); i++) {
+	        	System.out.printf("| | %-75s | |\n", "");
+	        	System.out.printf("| | %-75s | |\n", "Acompanhante " + (i+1));
+	            acompanhantes[i].exibe();
+	        }
+	        System.out.print("| " + "- ".repeat(40).trim() + " |\n");
         }
     }
 
