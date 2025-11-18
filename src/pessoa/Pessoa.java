@@ -18,10 +18,10 @@ public class Pessoa {
     }
 
     public void exibe() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Idade: " + idade);
-        System.out.println("CPF: " + cpf);
-        System.out.println("Nacionalidade: " + nacionalidade);
+        System.out.printf("| | %-76s| |\n", "Nome: " + nome);
+        System.out.printf("| | %-76s| |\n", "Idade: " + idade);
+        System.out.printf("| | %-76s| |\n", "CPF: " + cpf);
+        System.out.printf("| | %-76s| |\n", "Nacionalidade: " + nacionalidade);
     }
 
     public String getNome() {
